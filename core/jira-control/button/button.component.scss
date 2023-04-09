@@ -1,0 +1,38 @@
+
+$primary: #0052cc;
+$jira-bg: rgb(222, 235, 255);
+.btn{
+  @apply  inline-flex items-center justify-center h-8 align-middle leading-none whitespace-nowrap rounded-sm transition-all duration-100 appearance-none select-none px-3;
+ 
+    &.disabled {
+        @apply opacity-50 cursor-default pointer-events-none;
+    }
+    &:focus,
+    &:active{
+        outline-color: #1890ff;
+    }
+
+
+}
+
+.btn-empty{
+    background-color: white;
+    outline: none;
+    @apply text-neutral-600;
+    &:focus,
+    &:active{
+        outline: none;
+    }
+    &:not(:disabled){
+        &:hover{
+            @apply  bg-slate-200;
+        }
+        &:active{ 
+         color: $primary;  
+        }
+        &.is-active {
+            background-color: $jira-bg;
+            @apply text-black;
+          }
+    }
+}

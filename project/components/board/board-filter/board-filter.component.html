@@ -1,0 +1,38 @@
+<div class="flex item-center mt-6">
+  <form class="w-40 mr-4">
+    <app-input
+      [control]="searchControl"
+      [placeholder]="placeholder"
+      icon="search"
+    ></app-input>
+  </form>
+  <div class="flex flex-row mr-3">
+    <div *ngFor="let user of this.projectQuery.user$ | async" class="d-flex">
+      <j-avatar
+        [avatarUrl]="user.avatarUrl"
+        [name]="user.name"
+        [rounded]="true"
+        [size]="36"
+      ></j-avatar>
+    </div>
+  </div>
+  <j-button
+    [type]="'button'"
+    class="ml-3"
+    className="btn-empty"
+    [isActive]="true"
+    [ariaLabel]="'Ver solo mis issues'"
+    [name]="'Only My Issues'"
+  >
+  </j-button>
+
+  <j-button
+    [type]="'button'"
+    class="ml-3"
+    className="btn-empty"
+    [isActive]="true"
+    [ariaLabel]="'Ver solo mis issues'"
+    [name]="'Ignored Resolved'"
+  >
+  </j-button>
+</div>
